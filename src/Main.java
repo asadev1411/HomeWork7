@@ -8,8 +8,8 @@ public class Main {
         int numberMonth = 1;
         int amountSaving = 0;
         while (amountSaving < 2_459_000) {
-            amountSaving = amountSaving + amountSaving / 100;
-            amountSaving = amountSaving + monthlyDeposit;
+            amountSaving += amountSaving / 100;
+            amountSaving += monthlyDeposit;
             System.out.println("На конец " + numberMonth + "-го месяца сумма накоплений равна " + amountSaving + " рублей.");
             numberMonth++;
         }
@@ -33,11 +33,11 @@ public class Main {
         System.out.println("ДЗ-1. Задание №3");
 
         int populationSize = 12000000;
-        int birthRate = 17 * populationSize / 1000;
-        int deathRate = 8 * populationSize / 1000;
+        int birthRate = 17;
+        int deathRate = 8;
         int year = 1;
         while (year <= 10) {
-            populationSize = populationSize + birthRate - deathRate;
+            populationSize += populationSize * (birthRate - deathRate)/ 1000;
             System.out.println(year + "-й год численность населения составляет " + populationSize + " человек");
             year++;
         }
@@ -49,7 +49,7 @@ public class Main {
         int numberOfMonth = 1;
         int amountOfSaving = 15_000;
         while (amountOfSaving < 12_000_000) {
-            amountOfSaving = amountOfSaving + amountOfSaving * 7 / 100;
+            amountOfSaving += amountOfSaving * 7 / 100;
             System.out.println("На конец " + numberOfMonth + "-го месяца сумма накоплений равна " + amountOfSaving + " рублей.");
             numberOfMonth++;
         }
@@ -87,13 +87,10 @@ public class Main {
         System.out.println("ДЗ-2. Задание №4");
 
         int dateFirstFriday = 1;
-        int day = 0;
-        while (day <= 31) {
-            day++;
-            if (day % 7 == dateFirstFriday) {
-                System.out.println("Сегодня пятница, " + day + "-е число. Необходимо подготовить отчет.");
+        while (dateFirstFriday <= 31) {
+            System.out.println("Сегодня пятница, " + dateFirstFriday + "-е число. Необходимо подготовить отчет.");
+            dateFirstFriday +=7;
             }
-        }
 
         //HW3. Task №1
         System.out.println("");
@@ -119,6 +116,7 @@ public class Main {
         for (; multiplier <= 10; multiplier++) {
             System.out.println(multiplyable + "*" + multiplier + "=" + (multiplyable * multiplier));
         }
+
 
     }
 }
